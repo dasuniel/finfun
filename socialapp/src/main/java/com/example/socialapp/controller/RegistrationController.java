@@ -1,3 +1,4 @@
+// RegistrationController.java
 package com.example.socialapp.controller;
 
 import com.example.socialapp.model.User;
@@ -23,7 +24,7 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") User user) {
-        userService.save(user);
-        return "redirect:/home";
+        userService.saveUser(user);
+        return "redirect:/new-post"; // Redirige a la página de publicación después del registro
     }
 }

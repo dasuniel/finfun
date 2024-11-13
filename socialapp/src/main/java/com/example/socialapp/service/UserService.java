@@ -1,3 +1,4 @@
+// UserService.java
 package com.example.socialapp.service;
 
 import com.example.socialapp.model.User;
@@ -11,8 +12,10 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void save(User user) {
+    // Método para guardar un usuario
+    public void saveUser(User user) {
         userRepository.save(user);
     }
 }
+
 
