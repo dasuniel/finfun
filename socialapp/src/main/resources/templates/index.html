@@ -1,32 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Red Social</title>
+    <title>Página Principal</title>
 </head>
 <body>
-    <h1>Red Social</h1>
-    
-    <!-- Formulario para crear una nueva publicación -->
-    <form th:action="@{/post}" method="post">
-        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
-        
-        <!-- Mensaje de error opcional -->
-        <div th:if="${error}" style="color: red;">
-            <p th:text="${error}"></p>
-        </div>
-        
-        <textarea name="content" placeholder="Escribe algo..." required></textarea>
-        <button type="submit">Publicar</button>
-    </form>
-
-    <!-- Lista de publicaciones -->
-    <ul>
-        <li th:each="post : ${posts}">
-            <strong th:text="${post.user.username}">Nombre</strong>: 
-            <span th:text="${post.content}">Contenido</span>
-            <em th:text="${#dates.format(post.timestamp, 'yyyy-MM-dd HH:mm')}">Fecha</em>
-        </li>
-    </ul>
+    <h1 th:text="${message}">¡Bienvenido a SocialApp!</h1>
 </body>
 </html>
 
